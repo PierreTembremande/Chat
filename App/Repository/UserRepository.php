@@ -46,6 +46,24 @@ class UserRepository extends PDORepository
             $statement->execute();
 
             $this->pdo->commit();
+
+            $statement=$this->pdo->prepare('INSERT INTO `usergroupe`(ug_user,ug_groupe) VALUES(:username,"All");');
+            ['username' => $username] = (array) $object;
+            $statement->bindParam(':username:',$username);
+
+            $statement->execute();
+            $this->pdo->commit();
+
+            $statement=$this->pdo->prepare('INSERT INTO `usergroupe`(ug_user,ug_groupe) VALUES(:username,:groupename);');
+            ['username' => $username] = (array) $object;
+            $statement->bindParam(':username:',$username);
+            $statement->bindParam(':groupename', $groupeName);
+
+            $statement->execute();
+            $this->pdo->commit();
+
+
+
         } catch (\PDOException $e) {
             $this->pdo->rollBack();
         }

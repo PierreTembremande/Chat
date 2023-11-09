@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Pages;
 
+use App\Repository\MessageRepository;
 use App\Routing\Middleware\RequestMiddleware;
 use App\Routing\Operations\Get;
 use App\Routing\Operations\ControllerInterface;
@@ -20,6 +21,8 @@ class Home implements ControllerInterface
 
         $authorisation = new Authorisation();
         // $authorisation->authorize($this->request);
+        $message = new MessageRepository();
+        $message->get($this->request);
 
         $latte = new Engine();
         $latte->setTempDirectory(path: PROJECT_DIR . '/var/cache');

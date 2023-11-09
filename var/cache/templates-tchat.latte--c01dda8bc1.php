@@ -2,10 +2,10 @@
 
 use Latte\Runtime as LR;
 
-/** source: C:\xampp\htdocs\Chat\templates\tchat.latte */
-final class Templated2a7b1b7c6 extends Latte\Runtime\Template
+/** source: C:\xampp\htdocs\Chat\public/../templates/tchat.latte */
+final class Templatec01dda8bc1 extends Latte\Runtime\Template
 {
-	public const Source = 'C:\\xampp\\htdocs\\Chat\\templates\\tchat.latte';
+	public const Source = 'C:\\xampp\\htdocs\\Chat\\public/../templates/tchat.latte';
 
 
 	public function main(array $ʟ_args): void
