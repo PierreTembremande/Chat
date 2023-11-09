@@ -1,0 +1,26 @@
+{layout '@layout.latte'}
+
+{block title} Home {/block}
+
+{block content}
+    <div>
+        <h1>Bienvenue sur le TChat</h1>
+
+        {if null===$user}
+
+            <form action= '/login' method = 'POST'>
+                <label for="username">username :</label>
+                <input type="text" name="username" id="username">
+                <label for="pwd">Password :</label>
+                <input type="password" name="pwd" id="pwd" value="Sup3rS3cret!">
+                <input type="submit" value="login" >
+            </form>
+            <a href="/register">Create an account</a>
+
+        {else}
+            {include 'tchat.latte'}
+        {/if}
+
+
+    </div>
+{/block}

@@ -1,0 +1,14 @@
+<div id="messages" style="width: 300px; height: 500px; border: 1px solid grey; overflow-y: auto">
+    {foreach $messages as $message}
+        <span>{$message.author}</span> - {$message.content}<br>
+    {/foreach}
+</div>
+
+<form>
+    <input type="text" name="message" id="message" placeholder="Votre message"/>
+    <input type="submit" value="envoyer"/>
+    <p>Envoyer un message global : <code>Message</code></p>
+    <p> Envoyer aux membres d'un groupe : <code>/g GroupeName Message</code></p>
+    <p>Envoyer à un User : <code>/u Username Message</code></p>
+    <p>/groupe add GroupeName UserName</p>
+</form>

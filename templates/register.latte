@@ -1,0 +1,21 @@
+{layout '@layout.latte'}
+
+{block title} Register {/block}
+
+{block content}
+    <div>
+        <h1>Créer un compte sur le TChat</h1>
+
+        <p style="color:blue" n:ifset="($error)">{$error}</p>
+
+        <form method="POST">
+            <label for="username">Username :</label>
+            <input type="text" name="username" id="username">
+            <label for="pwd">Password :</label>
+            <input type="password" name="pwd" id="pwd">
+            <input type="submit" value="Username" >
+        </form>
+
+        <a href="/">Revenir à l'accueil</a>
+    </div>
+{/block}
